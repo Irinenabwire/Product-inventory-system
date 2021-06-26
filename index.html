@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/Style.css">
+</head>
+
+<body>
+ <div class="container-fluid bg-light">
+      <div class="row">
+        <div class="col-lg-2">
+        <h1 class="my-4"></h1>
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                 <a class="nav-link active" id="v-pills-item-tab" data-toggle="pill" href="index.html" role="tab" aria-controls="v-pills-item" aria-selected="true">Overview</a>
+                 <a class="nav-link " id="v-pills-item-tab" data-toggle="pill" href="addProduct.html" role="tab" aria-controls="v-pills-item" aria-selected="true">Product</a>
+             
+              <a class="nav-link" id="v-pills-purchase-tab" data-toggle="pill" href="#v-pills-purchase" role="tab" aria-controls="v-pills-purchase" aria-selected="false">Purchase</a>
+              <a class="nav-link" id="v-pills-vendor-tab" data-toggle="pill" href="#v-pills-vendor" role="tab" aria-controls="v-pills-vendor" aria-selected="false">Vendor</a>
+              <a class="nav-link" id="v-pills-sale-tab" data-toggle="pill" href="#v-pills-sale" role="tab" aria-controls="v-pills-sale" aria-selected="false">Sale</a>
+              <a class="nav-link" id="v-pills-customer-tab" data-toggle="pill" href="#v-pills-customer" role="tab" aria-controls="v-pills-customer" aria-selected="false">Customer</a>
+              <a class="nav-link" id="v-pills-search-tab" data-toggle="pill" href="#v-pills-search" role="tab" aria-controls="v-pills-search" aria-selected="false">Search</a>
+              <a class="nav-link" id="v-pills-reports-tab" data-toggle="pill" href="#v-pills-reports" role="tab" aria-controls="v-pills-reports" aria-selected="false">Reports</a>
+            </div>
+        </div>
+
+    <section id="mainHeader">
+        <div class="my-Container m-auto">
+            <nav class="navbar navbar-expand-lg text-dark navbar-light bg-light my-5 p-3">
+                <div class="container">
+                    <a class="navbar-brand myTextColor myText" href="index.html">Products Inventory System</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link activeLink" href="index.html">Home</a>
+                            </li>
+                           
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Products
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="addProduct.html">Add Product</a>
+
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contacts.html">Contact</a>
+                            </li>
+
+                        </ul>
+                     
+                    </div>
+                </div>
+            </nav>
+        </div>
+       
+        <div class="headContainer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="caption">
+                            <h1 class="mb-5">Our Products</h1>
+                            <p class="mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta beatae quam
+                                possimus ad
+                                mollitia fugit debitis aspernatur doloribus iure corporis magni placeat, soluta fugiat
+                                consequuntur quae non exercitationem sint quibusdam!</p>
+
+                            <a href="addProduct.html" class="d-flex align-items-center justify-content-center"><i
+                                    class="fas fa-plus-circle fa-2x mr-2 addProduct"></i><span> Add
+                                    Product</span></a>
+
+                            <!-- <a href="addProduct.html"><i class="fas fa-eye viewProduct ml-4 mr-2"></i><span>View
+                                    Product</span></a> -->
+                        </div>
+                    </div>
+                    <div class="col-md-7 d-lg-block d-md-block d-none">
+                        <div class="shoe">
+                            <img src="images/banner-img.jpg" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         
+    </body>
+
+</html>
