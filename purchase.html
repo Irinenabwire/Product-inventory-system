@@ -1,0 +1,110 @@
+<html><head>
+    
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/Style.css">
+    
+    </head><body>
+    	<div class="bs-example">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a href="#" class="navbar-brand">
+            <img src="images/logo.png" height="70" alt="Kefi store">
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav></div>
+ <div class="container-fluid bg-light">
+      <div class="row">
+        <div class="col-lg-2">
+        <h1 class="my-4"></h1>
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                 <a class="nav-link " id="v-pills-item-tab" data-toggle="pill" href="index.html" role="tab" aria-controls="v-pills-item" aria-selected="true">Overview</a>
+                 <a class="nav-link " id="v-pills-item-tab" data-toggle="pill" href="addProduct.html" role="tab" aria-controls="v-pills-item" aria-selected="true">Product</a>
+             
+              <a class="nav-link active" id="v-pills-purchase-tab" data-toggle="pill" href="purchase.html" role="tab" aria-controls="v-pills-purchase" aria-selected="false">Purchase</a>
+              <a class="nav-link e" id="v-pills-vendor-tab" data-toggle="pill" href="vendor.html" role="tab" aria-controls="v-pills-vendor" aria-selected="false">Vendor</a>
+              <a class="nav-link" id="v-pills-sale-tab" data-toggle="pill" href="sale.html" role="tab" aria-controls="v-pills-sale" aria-selected="false">Sale</a>
+              <a class="nav-link e" id="v-pills-customer-tab" data-toggle="pill" href="customer.html" role="tab" aria-controls="v-pills-customer" aria-selected="false">Customer</a>
+              <a class="nav-link" id="v-pills-search-tab" data-toggle="pill" href="inventory.html" role="tab" aria-controls="v-pills-search" aria-selected="false">Inventory</a>
+              <a class="nav-link" id="v-pills-reports-tab" data-toggle="pill" href="report.html" role="tab" aria-controls="v-pills-reports" aria-selected="false">Reports</a>
+            </div>
+        </div>
+        <div class="col-md-8">
+                <!--alert to tell products added-->
+                <div id="successProductAlert" class="alert alert-warning" role="alert">
+                    Product purchased successfuly!
+                </div>
+
+   			<div >
+				<div class="card card-outline-secondary my-4">
+				  <div class="card-header">Purchase Details</div>
+				  <div class="card-body">
+					<div id="purchaseDetailsMessage"></div>
+					<form>
+					  <div class="form-row">
+						<div class="form-group col-md-3">
+						  <label for="purchaseDetailsItemNumber">Item Number<span class="requiredIcon">*</span></label>
+						  <input type="text" class="form-control" id="purchaseDetailsItemNumber" name="purchaseDetailsItemNumber" autocomplete="off">
+						  <div id="purchaseDetailsItemNumberSuggestionsDiv" class="customListDivWidth"></div>
+						</div>
+						<div class="form-group col-md-3">
+						  <label for="purchaseDetailsPurchaseDate">Purchase Date<span class="requiredIcon">*</span></label>
+						  <input type="text" class="form-control datepicker" id="purchaseDetailsPurchaseDate" name="purchaseDetailsPurchaseDate" readonly="" value="2018-05-24">
+						</div>
+						<div class="form-group col-md-2">
+						  <label for="purchaseDetailsPurchaseID">Purchase ID</label>
+						  <input type="text" class="form-control invTooltip" id="purchaseDetailsPurchaseID" name="purchaseDetailsPurchaseID" title="This will be auto-generated when you add a new record" autocomplete="off">
+						  <div id="purchaseDetailsPurchaseIDSuggestionsDiv" class="customListDivWidth"></div>
+						</div>
+					  </div>
+					  <div class="form-row"> 
+						  <div class="form-group col-md-4">
+							<label for="purchaseDetailsItemName">Item Name<span class="requiredIcon">*</span></label>
+							<input type="text" class="form-control invTooltip" id="purchaseDetailsItemName" name="purchaseDetailsItemName" readonly="" title="This will be auto-filled when you enter the item number above">
+						  </div>
+						  <div class="form-group col-md-2">
+							  <label for="purchaseDetailsCurrentStock">Current Stock</label>
+							  <input type="text" class="form-control" id="purchaseDetailsCurrentStock" name="purchaseDetailsCurrentStock" readonly="">
+						  </div>
+						  <div class="form-group col-md-4">
+							<label for="purchaseDetailsVendorName">Vendor Name<span class="requiredIcon">*</span></label>
+							<select id="purchaseDetailsVendorName" name="purchaseDetailsVendorName" class="form-control chosenSelect">
+								
+							</select>
+						  </div>
+					  </div>
+					  <div class="form-row">
+						<div class="form-group col-md-2">
+						  <label for="purchaseDetailsQuantity">Quantity<span class="requiredIcon">*</span></label>
+						  <input type="number" class="form-control" id="purchaseDetailsQuantity" name="purchaseDetailsQuantity" value="0">
+						</div>
+						<div class="form-group col-md-2">
+						  <label for="purchaseDetailsUnitPrice">Unit Price<span class="requiredIcon">*</span></label>
+						  <input type="text" class="form-control" id="purchaseDetailsUnitPrice" name="purchaseDetailsUnitPrice" value="0">
+						  
+						</div>
+						<div class="form-group col-md-2">
+						  <label for="purchaseDetailsTotal">Total Cost</label>
+						  <input type="text" class="form-control" id="purchaseDetailsTotal" name="purchaseDetailsTotal" readonly="">
+						</div>
+					  </div>
+					  <button type="button" id="addPurchase" class="btn btn-success">Add Purchase</button>
+					  <button type="button" id="updatePurchaseDetailsButton" class="btn btn-primary">Update</button>
+					  <button type="reset" class="btn">Clear</button>
+					</form>
+				  </div> 
+				</div>
+			  </div>
+			  
+			  
+    
+    
+<script src="js/myJs.js"></script>
+  
+</body></html>

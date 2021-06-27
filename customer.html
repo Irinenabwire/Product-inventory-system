@@ -1,0 +1,144 @@
+<html><head>
+    
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/Style.css">
+    <link rel="stylesheet" href="vendor/bootstrap/css/cerulean.theme.min.css">
+	
+	<!-- Datatables CSS -->
+	<link rel="stylesheet" type="text/css" href="vendor/DataTables/datatables.css">
+	
+	<!-- Datepicker CSS -->
+	<link rel="stylesheet" href="vendor/datepicker164/css/bootstrap-datepicker.min.css">
+    
+    </head><body>
+    	<div class="bs-example">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a href="#" class="navbar-brand">
+            <img src="images/logo.png" height="70" alt="Kefi store">
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav></div>
+ 
+ <div class="container-fluid bg-light">
+      <div class="row">
+        <div class="col-lg-2">
+        <h1 class="my-4"></h1>
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                 <a class="nav-link " id="v-pills-item-tab" data-toggle="pill" href="index.html" role="tab" aria-controls="v-pills-item" aria-selected="true">Overview</a>
+                 <a class="nav-link " id="v-pills-item-tab" data-toggle="pill" href="addProduct.html" role="tab" aria-controls="v-pills-item" aria-selected="true">Product</a>
+             
+              <a class="nav-link " id="v-pills-purchase-tab" data-toggle="pill" href="purchase.html" role="tab" aria-controls="v-pills-purchase" aria-selected="false">Purchase</a>
+              <a class="nav-link e" id="v-pills-vendor-tab" data-toggle="pill" href="vendor.html" role="tab" aria-controls="v-pills-vendor" aria-selected="false">Vendor</a>
+              <a class="nav-link" id="v-pills-sale-tab" data-toggle="pill" href="sale.html" role="tab" aria-controls="v-pills-sale" aria-selected="false">Sale</a>
+              <a class="nav-link active " id="v-pills-customer-tab" data-toggle="pill" href="customer.html" role="tab" aria-controls="v-pills-customer" aria-selected="false">Customer</a>
+              <a class="nav-link" id="v-pills-search-tab" data-toggle="pill" href="inventory.html" role="tab" aria-controls="v-pills-search" aria-selected="false">Inventory</a>
+              <a class="nav-link" id="v-pills-reports-tab" data-toggle="pill" href="report.html" role="tab" aria-controls="v-pills-reports" aria-selected="false">Reports</a>
+            </div>
+        </div>
+				<div class="card card-outline-secondary my-4">
+				  <div class="card-header">Customer Details</div>
+				  <div class="card-body">
+				  <!-- Div to show the ajax message from validations/db submission -->
+				  <div id="customerDetailsMessage"></div>
+					 <form> 
+					  <div class="form-row">
+						<div class="form-group col-md-6">
+						  <label for="customerDetailsCustomerFullName">Full Name<span class="requiredIcon">*</span></label>
+						  <input type="text" class="form-control" id="customerDetailsCustomerFullName" name="customerDetailsCustomerFullName">
+						</div>
+						<div class="form-group col-md-2">
+							<label for="customerDetailsStatus">Status</label>
+							<select id="customerDetailsStatus" name="customerDetailsStatus" class="form-control chosenSelect">
+								<option value="Active">Active</option>
+								<option value="Disabled">Disabled</option>
+							</select>
+						</div>
+						 <div class="form-group col-md-3">
+							<label for="customerDetailsCustomerID">Customer ID</label>
+							<input type="text" class="form-control invTooltip" id="customerDetailsCustomerID" name="customerDetailsCustomerID" title="This will be auto-generated when you add a new customer" autocomplete="off">
+							<div id="customerDetailsCustomerIDSuggestionsDiv" class="customListDivWidth"></div>
+						</div>
+					  </div>
+					  <div class="form-row">
+						  <div class="form-group col-md-3">
+							<label for="customerDetailsCustomerMobile">Phone (mobile)<span class="requiredIcon">*</span></label>
+							<input type="text" class="form-control invTooltip" id="customerDetailsCustomerMobile" name="customerDetailsCustomerMobile" title="Do not enter leading 0">
+						  </div>
+						  <div class="form-group col-md-3">
+							<label for="customerDetailsCustomerPhone2">Phone 2</label>
+							<input type="text" class="form-control invTooltip" id="customerDetailsCustomerPhone2" name="customerDetailsCustomerPhone2" title="Do not enter leading 0">
+						  </div>
+						  <div class="form-group col-md-6">
+							<label for="customerDetailsCustomerEmail">Email</label>
+							<input type="email" class="form-control" id="customerDetailsCustomerEmail" name="customerDetailsCustomerEmail">
+						</div>
+					  </div>
+					  <div class="form-group">
+						<label for="customerDetailsCustomerAddress">Address<span class="requiredIcon">*</span></label>
+						<input type="text" class="form-control" id="customerDetailsCustomerAddress" name="customerDetailsCustomerAddress">
+					  </div>
+					  <div class="form-group">
+						<label for="customerDetailsCustomerAddress2">Address 2</label>
+						<input type="text" class="form-control" id="customerDetailsCustomerAddress2" name="customerDetailsCustomerAddress2">
+					  </div>
+					  <div class="form-row">
+						<div class="form-group col-md-6">
+						  <label for="customerDetailsCustomerCity">City</label>
+						  <input type="text" class="form-control" id="customerDetailsCustomerCity" name="customerDetailsCustomerCity">
+						</div>
+						<div class="form-group col-md-4">
+						  <label for="customerDetailsCustomerDistrict">District</label>
+						  <select id="customerDetailsCustomerDistrict" name="customerDetailsCustomerDistrict" class="form-control chosenSelect">
+							<option value="Ampara">Ampara</option>
+									<option value="Anuradhapura">Anuradhapura</option>
+									<option value="Badulla">Badulla</option>
+									<option value="Batticaloa">Batticaloa</option>
+									<option selected value="Colombo">Colombo</option>
+									<option value="Galle">Galle</option>
+									<option value="Gampaha">Gampaha</option>
+									<option value="Hambantota">Hambantota</option>
+									<option value="Jaffna">Jaffna</option>
+									<option value="Kalutara">Kalutara</option>
+									<option value="Kandy">Kandy</option>
+									<option value="Kegalle">Kegalle</option>
+									<option value="Kilinochchi">Kilinochchi</option>
+									<option value="Kurunegala">Kurunegala</option>
+									<option value="Mannar">Mannar</option>
+									<option value="Matale">Matale</option>
+									<option value="Matara">Matara</option>
+									<option value="Monaragala">Monaragala</option>
+									<option value="Mullaitivu">Mullaitivu</option>
+									<option value="Nuwara Eliya">Nuwara Eliya</option>
+									<option value="Polonnaruwa">Polonnaruwa</option>
+									<option value="Puttalam">Puttalam</option>
+									<option value="Ratnapura">Ratnapura</option>
+									<option value="Trincomalee">Trincomalee</option>
+									<option value="Vavuniya">Vavuniya</option>
+						  </select>
+						</div>
+					  </div>					  
+					  <button type="button" id="addCustomer" name="addCustomer" class="btn btn-success">Add Customer</button>
+					  <button type="button" id="updateCustomerDetailsButton" class="btn btn-primary">Update</button>
+					  <button type="button" id="deleteCustomerButton" class="btn btn-danger">Delete</button>
+					  <button type="reset" class="btn">Clear</button>
+					 </form>
+				  </div> 
+				</div>
+			  </div>
+			  
+    
+    
+ <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/try.js"></script>
+  
+</body></html>
